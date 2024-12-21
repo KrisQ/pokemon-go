@@ -6,7 +6,7 @@ import (
 	"github.com/KrisQ/pokemon-go/internal/pokeapi"
 )
 
-func commandMap() error {
+func commandMap(c *Config) error {
 	l, err := pokeapi.GetLocationAreas("https://pokeapi.co/api/v2/location-area?limit=20")
 	if err != nil {
 		return err
