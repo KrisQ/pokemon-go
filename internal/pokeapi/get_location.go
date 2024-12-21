@@ -1,26 +1,11 @@
 package pokeapi
 
-// curl get https://pokeapi.co/api/v2/location-area\?limit\=20
-// previous null;
-// next: result.next https://pokeapi.co/api/v2/location-area?offset=10&limit=10
-// previous: https://pokeapi.co/api/v2/location-area?offset=0&limit=10
-
 import (
 	"encoding/json"
 	"errors"
 	"io"
 	"net/http"
 )
-
-type LocationArea struct {
-	Count    int    `json:"count"`
-	Next     string `json:"next"`
-	Previous string `json:"previous"`
-	Results  []struct {
-		Name string `json:"name"`
-		URL  string `json:"url"`
-	} `json:"results"`
-}
 
 func GetLocationAreas(url string) (LocationArea, error) {
 	var l LocationArea
